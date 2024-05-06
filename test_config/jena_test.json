@@ -1,0 +1,9 @@
+{
+  "path2Exp": "../exp/",
+  "expType": "INPUT",
+  "dataset": "digital_agenda_indicators",
+  "engine": "jena",
+  "dataSize": "",
+  "device": "t14s",
+  "batchSize": 10000
+}

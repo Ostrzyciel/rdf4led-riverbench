@@ -1,0 +1,9 @@
+{
+  "path2Exp": "../exp/",
+  "expType": "INPUT",
+  "dataset": "digital_agenda_indicators",
+  "engine": "rdf4j_native",
+  "dataSize": "",
+  "device": "t14s",
+  "batchSize": 10000
+}
