@@ -1,0 +1,9 @@
+{
+    "path2Exp": "/exp/",
+    "expType": "INPUT",
+    "dataset": "muziekweb",
+    "engine": "jena",
+    "dataSize": "",
+    "device": "any",
+    "batchSize": 50000
+}

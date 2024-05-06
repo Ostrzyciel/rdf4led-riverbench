@@ -1,0 +1,9 @@
+{
+    "path2Exp": "/exp/",
+    "expType": "INPUT",
+    "dataset": "assist-iot-weather",
+    "engine": "rdf4j_native",
+    "dataSize": "",
+    "device": "any",
+    "batchSize": 50000
+}

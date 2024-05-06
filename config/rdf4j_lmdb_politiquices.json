@@ -1,0 +1,9 @@
+{
+    "path2Exp": "/exp/",
+    "expType": "INPUT",
+    "dataset": "politiquices",
+    "engine": "rdf4j_lmdb",
+    "dataSize": "",
+    "device": "any",
+    "batchSize": 50000
+}

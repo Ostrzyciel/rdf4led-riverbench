@@ -1,0 +1,9 @@
+{
+    "path2Exp": "/exp/",
+    "expType": "INPUT",
+    "dataset": "citypulse-traffic",
+    "engine": "virtuoso",
+    "dataSize": "",
+    "device": "any",
+    "batchSize": 50000
+}

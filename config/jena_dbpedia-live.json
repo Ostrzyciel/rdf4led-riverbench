@@ -1,0 +1,9 @@
+{
+    "path2Exp": "/exp/",
+    "expType": "INPUT",
+    "dataset": "dbpedia-live",
+    "engine": "jena",
+    "dataSize": "",
+    "device": "any",
+    "batchSize": 50000
+}
