@@ -8,7 +8,8 @@ import java.util.Vector;
 public class LinuxCommand {
     public static Vector<String> run(File directory, String... command) {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder(command);
+            ProcessBuilder processBuilder = new ProcessBuilder(command)
+                    .redirectErrorStream(true);
             if (directory != null) {
                 processBuilder.directory(directory);
             }

@@ -24,7 +24,7 @@ public class VirtuosoInput extends ExperimentInput<String> {
                 vPath("isql"),
                 "-H",
                 "localhost",
-                "exec=\"" + command + "\""
+                "exec=" + command
         );
     }
 
@@ -34,7 +34,12 @@ public class VirtuosoInput extends ExperimentInput<String> {
 
     @Override
     protected String initializeEngine() {
-        LinuxCommand.runAndPrint(new File(path2StoreFolder), "touch", "virtuoso.ini");
+        LinuxCommand.runAndPrint(
+                new File(path2StoreFolder),
+                "sh",
+                "-c",
+                "echo '[Parameters]\nDirsAllowed = ., " + path2DataFolder + "' > virtuoso.ini"
+        );
         System.out.println("Shutting down Virtuoso if already running");
         this.close("");
         System.out.println("Starting Virtuoso");
@@ -62,9 +67,9 @@ public class VirtuosoInput extends ExperimentInput<String> {
 
     @Override
     protected void doInput(File fileInput, String s) {
-        runIsql("ld_dir('" + path2DataFolder + "', '" + fileInput.getName() + "', 'http://example.com');\n" +
-                        "rdf_loader_run();\n" +
-                        "checkpoint;\n" +
+        runIsql("ld_dir('" + path2DataFolder + "', '" + fileInput.getName() + "', 'http://example.com'); " +
+                        "rdf_loader_run(); " +
+                        "checkpoint; " +
                         "delete from db.dba.load_list;"
                 );
     }
