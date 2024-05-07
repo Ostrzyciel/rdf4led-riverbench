@@ -8,3 +8,5 @@ rdf4j/target/
 jenatdb/target/
 rdf4led/target/
 01config/
+
+/test_config/
