@@ -1,7 +1,8 @@
 #!/bin/bash
 
 EXP_DIR="$1"
-DATASET="$2"
+MAX_MEM="$2"
+DATASET="$3"
 
 ENGINES=(
   'jena eu.ostrzyciel.rb_load_time.benchmark.jenatdb.JenaTdbInput eu.ostrzyciel.rb_load_time.jenatdb'
@@ -15,12 +16,13 @@ echo "Pulling the docker image"
 docker pull ghcr.io/ostrzyciel/rdf4led-riverbench:main
 
 echo "Extracting the dataset: $DATASET"
-tar -zxf "$EXP_DIR/data/$DATASET.tgz" -C "$EXP_DIR/data" --strip-components=1
+tar -zxf "$EXP_DIR/data/$DATASET.tar.gz" -C "$EXP_DIR/data" --strip-components=1
 echo "Done."
 
 for engine in "${ENGINES[@]}"; do
   IFS=' ' read -r -a engine <<< "$engine"
   docker run -it --rm \
+    --memory="$MAX_MEM" --memory-swap="$MAX_MEM" \
     -v "$(realpath "$EXP_DIR")/data:/exp/data" \
     -v "$(realpath "$EXP_DIR")/result:/exp/result" \
     -v "$(realpath "$EXP_DIR")/store:/exp/store" \
