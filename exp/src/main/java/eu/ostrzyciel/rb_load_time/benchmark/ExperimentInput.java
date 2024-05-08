@@ -44,8 +44,9 @@ public abstract class ExperimentInput<Engine> extends Experiment {
             long duration = end - start;
 
             var stats = getEngineStats(engine);
+            float speed = (batchSize * 1000f) / duration;
 
-            System.out.println("Inserting file: " + input.getName() + " storageSize " + size +  " speed " +  (batchSize * 1000f) / duration + " tps" + " in " + duration + "ms");
+            System.out.println("Inserting file: " + input.getName() + " storageSize " + size +  " speed " + speed + " tps" + " in " + duration + "ms");
             String toWrite = count +
                     "\t" +
                     size +
@@ -58,6 +59,11 @@ public abstract class ExperimentInput<Engine> extends Experiment {
 
             resultWriter.write(toWrite);
             count++;
+
+            if (speed < 80.0) {
+                System.out.println("Speed is below 80 tps, aborting");
+                break;
+            }
         }
 
         close(engine);
