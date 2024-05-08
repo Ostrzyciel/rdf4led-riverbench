@@ -44,7 +44,7 @@ public class PersistentLayer {
 
     ByteBuffer byteBuffer = ByteBuffer.allocate(PAGE_SIZE);
     try{
-      fileChannel.position(pageId * PAGE_SIZE);
+      fileChannel.position((long) pageId * PAGE_SIZE);
       fileChannel.read(byteBuffer);
     } catch (IOException e) {
       e.printStackTrace();
@@ -66,7 +66,7 @@ public class PersistentLayer {
     byteBuffer.rewind();
 
     try {
-      fileChannel.position(pageId*PAGE_SIZE);
+      fileChannel.position((long) pageId * PAGE_SIZE);
       fileChannel.write(byteBuffer);
     } catch (IOException e) {
       throw new RuntimeException(e.toString());
@@ -87,7 +87,7 @@ public class PersistentLayer {
     byteBuffer.limit(PAGE_SIZE);
 
     try {
-      fileChannel.position(pageId*PAGE_SIZE);
+      fileChannel.position((long) pageId * PAGE_SIZE);
       fileChannel.write(byteBuffer);
     } catch (IOException e) {
       throw new RuntimeException(e.toString());
@@ -104,7 +104,7 @@ public class PersistentLayer {
     byteBuffer.rewind();
 
     try{
-      fileChannel.position(blockId*BLK_SIZE);
+      fileChannel.position((long) blockId * BLK_SIZE);
       fileChannel.write(byteBuffer);
     }catch (IOException e){
       throw new RuntimeException(e.toString());
