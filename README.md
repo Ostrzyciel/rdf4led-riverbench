@@ -55,11 +55,11 @@ The `[DATASET-NAME]` parameter should be the same as in RiverBench, for example 
 
 ## Benchmark results
 
-Benchmark results are available on Zenodo: **TODO**
+Benchmark results are available on Zenodo: [https://doi.org/10.5281/zenodo.12087112](https://doi.org/10.5281/zenodo.12087112)
 
 ## Citation
 
-Preprint of this work will be published soon.
+A preprint of this work will be published soon.
 
 ## Authors
 
