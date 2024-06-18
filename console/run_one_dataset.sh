@@ -32,7 +32,10 @@ for engine in "${ENGINES[@]}"; do
       "config/${engine[0]}_${DATASET}.json"
 
   echo "Cleaning up ${engine[0]} store"
-  rm -rf "$EXP_DIR/store/${engine[0]}"
+  docker run -it --rm \
+    -v "$(realpath "$EXP_DIR")/store:/exp/store" \
+    ghcr.io/ostrzyciel/rdf4led-riverbench:main \
+    rm -rf "/exp/store/${engine[0]}"
   echo "Done."
 done
 
