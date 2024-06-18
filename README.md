@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12089254.svg)](https://doi.org/10.5281/zenodo.12089254)
+
 # RDF load time benchmarking with RiverBench
 
 This repository contains the code used to evaluate load times of several RDF stores (Apache Jena TDB2, RDF4J Native Store, RDF4J LMDB, Virtuoso Open Source, RDF4Led).
@@ -57,9 +59,11 @@ The `[DATASET-NAME]` parameter should be the same as in RiverBench, for example 
 
 Benchmark results are available on Zenodo: [https://doi.org/10.5281/zenodo.12087112](https://doi.org/10.5281/zenodo.12087112)
 
-## Citation
+## Citation and archiving
 
 A preprint of this work will be published soon.
+
+This repository was archived on Zenodo: [https://doi.org/10.5281/zenodo.12089254](https://doi.org/10.5281/zenodo.12089254)
 
 ## Authors
 
